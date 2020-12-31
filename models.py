@@ -23,7 +23,7 @@ class _Teacher17(nn.Module):
         super(_Teacher17, self).__init__()
         self.net = nn.Sequential(
             # Input n*3*17*17
-            # ???? kernel_size=5????
+            # ???? kernel_size=5 or 6????
             nn.Conv2d(3, 128, kernel_size=6, stride=1),
             nn.LeakyReLU(5e-3),
             # n*128*12*12
@@ -60,7 +60,8 @@ class _Teacher33(nn.Module):
         super(_Teacher33, self).__init__()
         self.net = nn.Sequential(
             # Input n*3*33*33
-            nn.Conv2d(3, 128, kernel_size=3, stride=1),
+            # ???? kernel_size=3 or 5????
+            nn.Conv2d(3, 128, kernel_size=5, stride=1),
             # nn.BatchNorm2d(128),
             nn.LeakyReLU(5e-3),
             # n*128*29*29
